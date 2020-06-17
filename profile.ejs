@@ -1,0 +1,18 @@
+<%- include('header'); -%>
+    <div class="container">
+        <h1>personal information</h1>
+        <ul>
+            <li><strong>ID : </strong>
+                <%= curentUser.id %>
+            </li>
+            <li><strong>EMAIL : </strong>
+                <%= curentUser.email %>
+            </li>
+            <li><strong>Display name : </strong>
+                <%= curentUser.displayName %>
+            </li>
+        </ul>
+        <a href="./changeDisplayname">Change display name</a>
+        <a href="./changePassword">Change password</a>
+    </div>
+    <%- include('footer'); -%>

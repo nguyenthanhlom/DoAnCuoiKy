@@ -1,18 +1,140 @@
-<%- include('header'); -%>
-    <div class="container">
-        <h1>personal information</h1>
-        <ul>
-            <li><strong>ID : </strong>
-                <%= curentUser.id %>
-            </li>
-            <li><strong>EMAIL : </strong>
-                <%= curentUser.email %>
-            </li>
-            <li><strong>Display name : </strong>
-                <%= curentUser.displayName %>
-            </li>
-        </ul>
-        <a href="./changeDisplayname">Change display name</a>
-        <a href="./changePassword">Change password</a>
+<%- include('headeradmin.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Simple Bank - Ngân hàng của mọi nhà!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <%- include('footer'); -%>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <!-- Brand Area End -->
+
+    <div class="main-w3layouts wrapper" style="min-height: 500px!important;">
+        <h1>Chi tiết thành viên</h1>
+        <% if(!finduser){%>
+        <h4>Không tìm thấy User này!</h4>
+        <%} else{%>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="/admin/profile" method="post">
+                    <div class="m-2">
+                        <label for="">Tên</label>
+                        <input class="text" type="text" name="name" value="<%= finduser.name%>" required
+                            autocomplete="off">
+                    </div>
+                    <div class="m-2">
+                        <label for="">Email</label>
+                        <input class="text" type="email" name="email" value="<%=finduser.email%>" required
+                            autocomplete="off">
+                    </div>
+                    <div class="m-2">
+                        <label for="">CMND</label>
+                        <input class="text" type="text" name="cmnd" value="<%=finduser.cmnd%>" required
+                            autocomplete="off">
+                    </div>
+                    <div class="m-2">
+                        <label for="">NewPassword</label>
+                        <input type="password" name="password" placeholder="Nếu thay đổi pass thì nhập vào đây!"
+                            autocomplete="off">
+                    </div>
+                    <div class="m-2">
+                        <label for="">Limit</label>
+                        <input class="text" type="text" name="limit" value="<%=finduser.limit%>" required
+                            autocomplete="off">
+                    </div>
+                    <div class="m-2">
+                        <label for="">Blance</label>
+                        <input class="text" type="number" readonly value="<%=finduser.acblan%>"
+                            autocomplete="off">
+                    </div>
+                    <div class="m-2">
+                        <label for="">Image</label>
+                        <div class="d-flex justify-content-between">
+                            <img src="/<%=finduser.image1%>" alt="" style="width: 40% !important;">
+                            <img src="/<%=finduser.image2%>" alt="" style="width: 40% !important;">
+                        </div>
+                    </div>
+                    <div class="m-2">
+                        <label for="">Tình trạng</label>
+                        <div>
+                            <select name="status" id="">
+                                <option value="0" <%= finduser.status == 0 ? "selected" :"" %>>Chưa xác thực</option>
+                                <option value="-1" <%= finduser.status == -1 ? "selected" :"" %>>Chờ xác thực</option>
+                                <option value="1" <%= finduser.status == 1 ? "selected" :"" %>>Đã xác thực</option>
+                                <option value="2" <%= finduser.status == 2 ? "selected" :"" %>>Đã khóa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="hidden" name="id" value="<%= finduser.id%>">
+                    <input type="submit" value="UPDATE">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        id="btnpayin">
+                        PAYIN
+                    </button>
+
+                </form>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document" style="margin: 10rem auto!important;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Nạp tiền vào tài khoản</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form action="/admin/payin" method="post">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="">Nhập số tiền : </label>
+                                    <input type="number" class="form-control border border-success" name="money"
+                                        placeholder="money here...">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" name="id" value="<%= finduser.id%>">Nạp
+                                    tiền</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</main>
+<%- include('footer.ejs')%>
+        <script>
+            $(document).ready(() => {
+                $('#btnpayin').click((e) => {
+                    if ("<%= finduser.status %>" != 1) {
+                        alert("Tài khoản chưa được kích hoạt!!");
+                        return false;
+                    }
+                });
+            })
+        </script>

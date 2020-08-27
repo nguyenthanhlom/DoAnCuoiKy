@@ -1,249 +1,101 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="zxx">
 
 <head>
-    <title>
-        <%=title%>
-    </title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Trang chủ ngân hàng số </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/scss/hover_button.scss" />
-
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/css/slicknav.css">
+    <link rel="stylesheet" href="/assets/css/flaticon.css">
+    <link rel="stylesheet" href="/assets/css/gijgo.css">
+    <link rel="stylesheet" href="/assets/css/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="/assets/css/slick.css">
+    <link rel="stylesheet" href="/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-
-            </div>
-            <div class="col-sm-9">
-                <div class="row" id=nav_top>
-                    <div class="col-sm-3"  id="nav_link1">
-                        <a class="nav-link" href="/" >Trang chủ</a>
-                    </div>
-                    <div class="col-sm-3" id="nav_link1">
-                        <a class="nav-link" href="#">Giới thiệu</a>
-                    </div>
-                    <div class="col-sm-3"  id="nav_link1">
-                        <a class="nav-link" href="#">Tin tức-Sự kiện</a>
-                    </div>
-                    <div class="col-sm-3">
-                       
-                    </div>
-
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="/assets/img/logo/loder.png" alt="">
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-sm-12">
-                
-                <div class="header-home">
-                    <nav class="navbar navbar-expand-lg navbar-light " id="header-home1">
-                        <h3 style ="color:blue;" class="navbar-brand" href="/">Simple Bank</h3>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button>
-                         
-
-                       
-                  
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav mr-auto">
-
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i> Khách hàng cá nhân
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Khách hàng ưu tiên
-                  </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
-                                </li>
-
-                            </ul>
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#SignUpModal">Đăng ký</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Đăng nhập</a>
-
-                                </li>
-
-                            </ul>
-
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal --dang nhap -->
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header border-bottom-0">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-title text-center">
-                            <h4 style="color:#649EFF">Đăng nhập</h4>
-                        </div>
-                        <div class="d-flex flex-column text-center">
-                            <form method="POST" action="/login">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="email1" name="email1" placeholder="Email/Username...">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="password1" name="password1" placeholder=" Mật khẩu...">
-                                </div>
-                                <input type="submit" class="btn btn-info btn-block btn-round" value="Đăng nhập"style="background-color: #649EFF;color:white">
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <div class="modal-footer d-flex flex-column">
-                       
-                        <a href="/change-password">Quên mật khẩu?</a>
-                        <div class="signup-section">Bạn chưa có tài khoản? <a href="/register" class="text-info">Đăng ký</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal -->
-        <!-- Modal --dangky -->
-        <div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 600px;">
-                <div class="modal-content">
-                    <div class="modal-header border-bottom-0">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-title text-center">
-                            <h4 style="color:#649EFF">Đăng Ký</h4>
-                        </div>
-                        <div class="d-flex flex-column text-center">
-                            <form method="POST" action="/register">
-                                <div class="form-row">
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control " id="username2" name="username1"
-                                                placeholder="Tên đăng nhập" required autofocus>
-                                           
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control " id="email2" name="email1"
-                                                placeholder="Địa chỉ Email" required autofocus>
-                                          
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control " id="password2" name="password1"
-                                                placeholder="Mật khẩu" required autofocus>
-                                          
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-12 col-lg-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control " id="hoten2" name="hoten1"
-                                                placeholder="Họ và tên" required autofocus>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <input type="text" class="form-control " id="cmnd2" name="cmnd" placeholder="Số CMND"
-                                        required autofocus>
-                                   
-                                </div>
-                                <div class="form-group">
-                                    <input type="date" class="form-control border_input" id="daterange2" name="daterange"
-                                        placeholder="Ngày cấp" required autofocus>
-                                   
-                                </div>
-                                <button type="submit" class="btn btn-block btn-round" style="background-color: #649EFF;color:white">Đăng ký</button>
-                            </form>
-
-
-                        </div>
-                    </div>
-
-                    <div class="modal-footer d-flex justify-content-center">
-                        <div class="signup-section">Bạn đã có tài khoản? <a href="/login" class="text-info">Đăng nhập</a>.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-        <% if (title=='Trang chủ') { %>
-            <div class="row">
-                <div class="col-sm-12">
-                    <header>
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            </ol>
-                            <div class="center" id="silde_home">
-                                <div class="carousel-item active">
-                                    <img src="/image/Capture.PNG" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/image/simple.PNG" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="./img/03.jpg" class="d-block w-100" alt="...">
-                                </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!--? Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-1">
+                            <div class="logo">
+                                <a href="/" style="color: #2e0e8c;font-weight: bold; ">SIMPLE BANK</a>
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
                         </div>
-                    </header>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <div class="menu-main d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="/">Trang chủ</a></li>
+                                            <% if(!user){%>
+                                            <li><a href="/login">Đăng nhập</a></li>
+                                            <li><a href="/register">Tham gia ngay</a></li>
+                                            <%} else if(user){%>
+                                            <% if (user.status === 1){%>
+                                            <li><a href="#">Chuyển tiền</a>
+                                                <ul class="submenu">
+                                                    <li><a href="/transfermoney">Tạo giao dịch mới</a></li>
+                                                    <li><a href="/transferinter">Tạo giao dịch liên ngân hàng</a></li>
+                                                    <li><a href="/listtransfermoney">Lịch sử giao dịch</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Tài khoản tiết kiệm</a>
+                                                <ul class="submenu">
+                                                    <li><a href="/save">Tạo tài khoản tiết kiệm</a></li>
+                                                    <li><a href="/listsave">Lịch sử sổ tài khoản tiết kiệm</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>Số dư hiện tại : <%= user.acblan%> VND</li>
+                                            <% } else if(user.status === 0) {%>
+                                            <li><a href="/verify">Xác thực tài khoản</a></li>
+                                            <%} else {%>
+                                            <li><a href="/#">Tài khoản đang chờ nhân viên xác thực</a></li>
+                                            <%}%>
+                                            <li><a href="/logout">(<%= user.name%>)Đăng xuất</a></li>
+                                            <%}%>
+                                            
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
                 </div>
             </div>
-            <% } else { %>
-
-                <% } %>
+        </div>
+    </div>
+    <!-- Header End -->
+</header>

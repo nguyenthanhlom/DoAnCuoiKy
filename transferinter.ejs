@@ -1,0 +1,60 @@
+<%- include('header.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Chuyển tiền ngân hàng cực nhanh</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <div class="main-w3layouts wrapper">
+        <h1>Điền đầy đủ thông tin chuyển tiền!</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="/transferinter" method="post">
+                    <input class="text" type="text" name="id" placeholder="Số tài khoản nhận" required
+                        autocomplete="off">
+                    <input class="text" type="number" name="money" placeholder="Số tiền" required autocomplete="off">
+                    <div class="form-group">
+                        <label for="">Chọn ngân hàng</label>
+                        <select class="form-control" name="selectbank">
+                            <% findBankInter.forEach((value)=>{%>
+                            <option><%= value.bankname%></option>
+                            <%})%>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control" name="content" id="" rows="3" placeholder="Nhập nội dung"></textarea>
+                    </div>
+                    <p style="font-weight: bold;color:red"><%= error?error :""%></p>
+                    <input type="submit" value="CONFIRM">
+                </form>
+                <p><a href="/"> Trang chủ</a></p>
+            </div>
+        </div>
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- Brand Area End -->
+</main>
+<%- include('footer.ejs')%>

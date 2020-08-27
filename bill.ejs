@@ -1,0 +1,67 @@
+<%- include('header.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Hóa đơn!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <div class="main-w3layouts wrapper">
+        <h1>Chi tiết giao dịch!</h1>
+        <% if(!find) {%>
+        <h1>Không tồn tại giao dịch này!</h1>
+        <%}else{%>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <div class="card text-left">
+                    <div class="card-body" style="font-size: 20px">
+                        <div class="d-flex">
+                            <div class="card-text">Tài khoản người gửi</div>
+                            <div class="card-text ml-auto"><%= find.idsend%></div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="card-text">Tài khoản người nhận</div>
+                            <div class="card-text ml-auto"><%= find.idrecive%></div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="card-text">Số tiền</div>
+                            <div class="card-text ml-auto"><%= find.money%></div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="card-text">Giờ và ngày</div>
+                            <div class="card-text ml-auto"><%= find.updatedAt.toLocaleTimeString()%> <%= find.updatedAt.toLocaleDateString()%></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+
+
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    </div>
+    <!-- Brand Area End -->
+</main>
+<%- include('footer.ejs')%>

@@ -1,0 +1,62 @@
+<%- include('headeradmin.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>WELCOME SIMPLE BANK</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <!-- Brand Area End -->
+    <div class="main-w3layouts wrapper">
+        <h1 class="m-4">Quản trị thành viên trong ngân hàng!</h1>
+        <div class="d-flex justify-content-around">
+            <div class="agileits-top " style="background-color: #76b852;">
+                <form action="/admin/seach" method="post">
+                    <h3>Tìm kiếm thành viên</h3>
+                    <input class="text" type="text" name="value" placeholder="stk or cmnd..." required
+                        autocomplete="off">
+                    <input type="submit" value="SEACH">
+                </form>
+                <% if(!p) {%>
+                    <p>Không có kết quả tìm kiếm</p>
+                <%}else{%>
+                    <a href="/admin/profile/<%= p.id%>" class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"><%= p.name%></h4>
+                            <p class="card-text" style="color:black">CMND : <%= p.cmnd%></p>
+                        </div>
+                    </a>
+                <%}%>
+            </div>
+            <div class="agileits-top">
+                <a href="/admin/waiting" style="background-color: #76b852;padding: 2rem;">Danh sách chờ duyệt
+                    <span style="color: red;"> (<%= count%>)</span>
+                </a>
+            </div>
+        </div>
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</main>
+<%- include('footer.ejs')%>

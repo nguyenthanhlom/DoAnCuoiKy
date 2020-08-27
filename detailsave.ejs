@@ -1,0 +1,72 @@
+<%- include('header.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Chuyển tiền ngân hàng cực nhanh</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <div class="main-w3layouts wrapper">
+        <h1>Chi tiết giao dịch!</h1>
+        <% if(!find) {%>
+        <h1>Không tồn tại sổ tiết kiệm này!</h1>
+        <%}else{%>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <div class="card text-left">
+                    <div class="card-body" style="font-size: 20px">
+                        <div class="d-flex">
+                            <div class="card-text">Ngày gửi</div>
+                            <div class="card-text ml-auto"><%= find.createdAt.toLocaleDateString()%></div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="card-text">Số tiền</div>
+                            <div class="card-text ml-auto"><%= find.moneysend%>VND</div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="card-text">Số tháng gửi</div>
+                            <div class="card-text ml-auto"><%= find.month%></div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="card-text">Ngày kết thúc</div>
+                            <div class="card-text ml-auto"><%= find.dayend%>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="card-text">Số tiền nhận được</div>
+                            <div class="card-text ml-auto"><%= totalmn%>VND</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+
+
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    </div>
+    <!-- Brand Area End -->
+</main>
+<%- include('footer.ejs')%>

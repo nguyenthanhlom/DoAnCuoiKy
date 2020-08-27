@@ -1,0 +1,74 @@
+<%- include('header.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Chuyển tiền ngân hàng cực nhanh</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <div class="main-w3layouts wrapper">
+        <h1>Danh sách sổ tài khoản tiết kiệm!</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <p><a href="/"> Trang chủ</a></p>
+                <div class="row">
+                    <% if(!list.length){%>
+                    <h1>Không tồn tại danh sách tiết kiệm nào!</h1>
+                    <%}else{%>
+                    <% list.forEach((value)=>{%>
+                    <div class="col-sm-12 col-md-12 col-12 m-2">
+                        <a class="card" href="/detailsave/<%= value.id%>" style="color: black;">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>Mã sổ tiết kiệm : </div>
+                                    <div><%= value.id%></div>
+                                </div>
+                                <div class="d-flex">
+                                    <div>Số tiền gửi : </div>
+                                    <div><%= value.moneysend%></div>
+                                </div>
+                                <div class="d-flex">
+                                    <div>Số tháng gửi : </div>
+                                    <div><%= value.month%></div>
+                                </div>
+                                <div class="d-flex">
+                                    <div>Tình trạng : </div>
+                                    <div><%= value.status === 0?"Đang mở":value.status===1?"Đã đóng":"Đã hủy"%></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <%})%>
+                    <%}%>
+                   
+        
+    </div>
+    </div>
+    </div>
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    </div>
+    <!-- Brand Area End -->
+</main>
+<%- include('footer.ejs')%>

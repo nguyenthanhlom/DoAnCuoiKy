@@ -1,0 +1,51 @@
+<%- include('header.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Chuyển tiền ngân hàng cực nhanh</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <div class="main-w3layouts wrapper">
+        <h1>Nhập mã xác nhận nhận được qua email để xác nhận giao dịch!</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="/transfermoney/verify" method="post">
+                    <input class="text" type="text" name="token" placeholder="Token" required autocomplete="off">
+                    <input type="hidden" name="id" value="<%= createtran.id%>" />
+                    <input type="hidden" name="tokenauth" value="<%= infoverify.token?infoverify.token :""%>">
+                    <input type="hidden" name="privateKey"
+                        value="<%= infoverify.privateKey?infoverify.privateKey :''%>" />
+                    <p style="font-weight: bold;color:red"> <% error?error:"" %></p>
+                    <input type="submit" value="CONFIRM">
+                </form>
+                <p><a href="/"> Trang chủ</a></p>
+            </div>
+        </div>
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- Brand Area End -->
+</main>
+<%- include('footer.ejs')%>

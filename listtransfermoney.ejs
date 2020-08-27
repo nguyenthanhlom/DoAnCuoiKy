@@ -1,0 +1,55 @@
+<%- include('header.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Chuyển tiền ngân hàng cực nhanh</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <div class="main-w3layouts wrapper">
+        <h1>Danh sách lịch sử chuyển nhận tiền!</h1>
+        <div class="container">
+            <div class="row ">
+                <div class="agileits-top">
+                    <% if(!getallTran.length){%>
+                    <h1>Không có lịch sử giao dịch nào!</h1>
+                    <%}else{%>
+                    <% getallTran.forEach((value)=>{%>
+                    <a href="/bill/<%= value.id%>" class="card">
+                        <div class="card-body" style="color: black;">
+                            <div class="card-text">Mã giao dịch : <%= value.id%> </div>
+                            <div class="card-text">Thời gian giao dịch : <%= value.updatedAt.toLocaleTimeString()%>
+                                <%= value.updatedAt.toLocaleDateString()%></div>
+                        </div>
+                    </a>
+                    <%})}%>
+                </div>
+            </div>
+        </div>
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- Brand Area End -->
+</main>
+<%- include('footer.ejs')%>

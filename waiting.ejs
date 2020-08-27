@@ -1,0 +1,61 @@
+<%- include('headeradmin.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Ngân hàng với sự bảo hộ của Rồng bay Phựng mú!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <!-- Brand Area End -->
+
+    <div class="main-w3layouts wrapper" style="min-height: 500px!important;">
+        <h1>Danh sách thành viên chờ duyệt!</h1>
+        <% if (listuser.length) {%>
+        <% listuser.forEach((value)=>{%>
+        <table class="table container text-center">
+            <thead>
+                <tr>
+                    <th>Số cmnd</th>
+                    <th>Họ tên</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row"><%= value.cmnd%></td>
+                    <td><%= value.name%></td>
+                    <td><a href="/admin/profile/<%= value.id%>" class="btn btn-success p-4">Chi tiết</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <%})%>
+        <%} else{%>
+        <h1 class="text-center">Không có user nào chờ duyệt!</h1>
+        <%}%>
+        <a href="/admin/index" class="btn btn-success mx-auto d-block w-25 mt-4">Quay lại</a>
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</main>
+<%- include('footer.ejs')%>

@@ -1,0 +1,54 @@
+<%- include('header.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Ngân hàng với sự bảo hộ của Rồng bay Phựng mú!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <div class="main-w3layouts wrapper">
+        <h1>Xác thực tài khoản bằng cmnd!</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="/verify" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Mặt trước CMND : </label>
+                        <input class="form-control-file" type="file" name="image1" placeholder="Image 1" required
+                            autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label>Mặt sau CMND : </label>
+                        <input class="form-control-file" type="file" name="image2" placeholder="Image 2" required
+                            autocomplete="off" />
+                        <input type="submit" value="CONFIRM" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- Brand Area End -->
+</main>
+<%- include('footer.ejs')%>

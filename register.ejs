@@ -1,20 +1,50 @@
-<%- include('header'); -%>
-  <div class="container">
-  
-    <form method="POST">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Display name</label>
-        <input name="displayName" type="text" class="form-control"  placeholder="Display name">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-primary">Register</button>
-    </form>
-  </div>
-<%- include('footer'); -%>
+<%- include('header.ejs')%>
+<link rel="stylesheet" href="/css/register.css">
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Đăng ký ngay tài khoản mới để hưởng nhiều ưu đãi</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Brand Area Start -->
+    <div class="main-w3layouts wrapper">
+        <h1>Điền đầy đủ thông tin và tham gia ngay thôi!</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="/register" method="post">
+                    <input class="text" type="text" name="username" placeholder="Username" required autocomplete="off">
+                    <input class="text email" type="email" name="email" placeholder="Email" required autocomplete="off">
+                    <input class="text" type="text" name="cmnd" placeholder="CMND" required autocomplete="off">
+                    <input class="text w3lpass" type="password" name="password" placeholder="password" required
+                        autocomplete="off">
+                    <input type="submit" value="SIGNUP">
+                </form>
+                <p>Don't have an Account? <a href="/login"> Login Now!</a></p>
+            </div>
+        </div>
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- Brand Area End -->
+</main>
+<%- include('footer.ejs')%>
